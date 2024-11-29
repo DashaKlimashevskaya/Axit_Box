@@ -11,16 +11,6 @@
   margin: 0 auto;
   text-align: center;
 }
-@media (max-width: 1024px) {
-  .container {
-    max-width: 999px;
-  }
-}
-@media (max-width: 425px) {
-  .container {
-    max-width: 295px;
-  }
-}
 
 .header .container {
   display: flex;
@@ -36,36 +26,24 @@
   position: fixed;
   z-index: 1;
 }
-.header::after {
-  content: "";
-  display: block;
-  max-width: 1170px;
-  width: 100%;
-  height: 1px;
-  background-color: #BABBC5;
-  position: absolute;
-  bottom: 0;
-  left: calc(50% - 585px);
-}
-@media (max-width: 1024px) {
-  .header::after {
-    max-width: 984px;
-    left: calc(50% - 492px);
-  }
-}
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .header {
-    padding: 21.39px 0 0;
+    padding-top: 21.39px;
   }
-  .header::after {
-    display: none;
+}
+.header .container {
+  border-bottom: 1px solid #BABBC5;
+}
+@media (max-width: 767px) {
+  .header .container {
+    border-bottom: 0;
   }
 }
 .header__wrapper--logo {
   width: 183.86px;
   display: flex;
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .header__wrapper--logo {
     width: 103.47px;
   }
@@ -73,7 +51,7 @@
 .header svg {
   width: 100%;
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .header__wrapper--items {
     display: none;
   }
@@ -82,7 +60,13 @@
   display: flex;
   align-items: center;
 }
-@media (max-width: 424px) {
+@media (max-width: 1024px) {
+  .header__items {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+@media (max-width: 767px) {
   .header__items {
     display: none;
   }
@@ -112,10 +96,18 @@
   border-bottom: 3px solid #E71414;
   color: #E71414;
 }
+@media (max-width: 1024px) {
+  .header__item--link {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .header__menu {
   display: none;
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .header__menu {
     display: flex;
   }
@@ -136,7 +128,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-color: rgba(37, 43, 73, 0.5);
+  background-color: rgba(37, 43, 73, 0.8);
   position: absolute;
   left: 0;
   top: 0;
@@ -146,7 +138,7 @@
     padding: 257px 0 126px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .banner {
     padding: 106px 0 126px;
   }
@@ -167,10 +159,8 @@
     font-family: "Raleway", sans-serif;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .banner__title {
-    max-width: 280px;
-    width: 100%;
     font-size: 36px;
     line-height: 42px;
     color: #FFFFFF;
@@ -193,7 +183,7 @@
     font-family: "Raleway", sans-serif;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .banner__text {
     font-size: 14px;
     line-height: 16px;
@@ -227,7 +217,7 @@
     padding: 24.5px 0 24.5px;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 767px) {
   .banner__btn {
     max-width: 279.24px;
     padding: 15px 0 15px;
