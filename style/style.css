@@ -211,6 +211,7 @@
   max-width: 370px;
   width: 100%;
   border: none;
+  text-transform: uppercase;
   cursor: pointer;
 }
 .banner__btn:hover {
