@@ -173,6 +173,7 @@ $font-color: #000;
         @include font(64px, 75px, #FFFFFF, $font-family);
         text-transform: uppercase;
         margin-bottom: 31.43px;
+        font-weight: 900;
 
         @media (max-width:1024px) {
             @include font(48px, 56px, #FFFFFF, $font-family);

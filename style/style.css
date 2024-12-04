@@ -155,6 +155,7 @@
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   margin-bottom: 31.43px;
+  font-weight: 900;
 }
 @media (max-width: 1024px) {
   .banner__title {
