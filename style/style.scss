@@ -1,0 +1,238 @@
+$font-family:"Raleway", sans-serif;
+$font-color: #000;
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container
+{
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+%header__container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 30px;
+    position: relative;
+}
+
+@mixin font($font-size, $line-height, $color, $font-family)
+{
+    font-size:$font-size;
+    line-height:$line-height;
+    color:$color;
+    font-family:$font-family;
+}
+
+.header
+{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+
+    @media (max-width:767px) {
+        padding: 21.39px 0 21.39px;
+    }
+
+    .container
+    {
+        @extend %header__container;
+        border-bottom: 1px solid #BABBC5;
+
+        @media (max-width:767px) {
+            border-bottom: 0;
+        }
+    }
+    &__wrapper--logo
+    {
+        width: 183.86px;
+        display: flex;
+
+        @media (max-width:767px) {
+            width: 103.47px;
+        }
+    }
+    & svg
+    {
+        width: 100%;
+    }
+
+    &__menu
+    {
+        display: none;
+
+        @media (max-width:767px) {
+            background: none;
+            border: none;
+            display: flex;
+        }
+    }
+}
+.nav{
+        @media (max-width:767px) {
+            display: none;
+    }
+    
+    &__items
+    {
+        display: flex;
+        align-items: center;
+
+        @media (max-width:1024px) {
+            column-gap: 10px;
+        }
+
+        @media (max-width:767px) {
+                display: none;
+        }
+    }
+    &__item
+    {
+        text-align: center;
+        list-style-type: none;
+    }
+    &__item--link
+    {
+        @include font(13px, 15px, #FFFFFF, $font-family);
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        font-weight: 700;
+        padding: 36px 0 32px;
+        display: block;
+        min-width: 134px;
+        border-bottom: 3px solid transparent; 
+
+        &:hover
+        {
+            border-bottom: 3px solid #BABBC5;
+        }
+
+        &:active
+        {
+            border-bottom: 3px solid #E71414;
+            color: #E71414;
+        }
+
+        @media (max-width:1024px) {
+            min-width: max-content;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+%banner__container
+{
+    position: relative;
+    text-align: center;
+}
+.banner
+{
+    padding: 237px 0 120px;
+    background: url(../media/1.jpg) center/cover no-repeat;
+    position: relative;
+
+    &::before
+    {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #252B49, $alpha: 0.8);
+        position: absolute;
+        left: 0;
+        top:0;
+    }
+
+    @media (max-width:1024px) {
+        padding: 257px 0 126px;
+    }
+    @media (max-width:767px) {
+        padding: 106px 0 126px;
+    }
+
+    .container
+    {
+        @extend %banner__container;
+    }
+    &__title
+    {
+        @include font(64px, 75px, #FFFFFF, $font-family);
+        text-transform: uppercase;
+        margin-bottom: 31.43px;
+        font-weight: 900;
+
+        @media (max-width:1024px) {
+            @include font(48px, 56px, #FFFFFF, $font-family);
+        }
+
+        @media (max-width:767px) {
+            @include font(36px, 42px, #FFFFFF, $font-family);
+        }
+    }
+    &__text
+    {
+        @include font(24px, 28px, #FFFFFF, $font-family);
+        font-weight: 400;
+        max-width: 999px;
+        width: 100%;
+        margin: 0 auto 79.57px;
+
+        @media (max-width:1024px) {
+            @include font(18px, 21px, #FFFFFF, $font-family);
+            max-width: 984px;
+        }
+
+        @media (max-width:767px) {
+            @include font(14px, 16px, #FFFFFF, $font-family);
+            max-width: 100%;
+        }
+    }
+    &__btn
+    {
+        @include font(24px, 28px, #FFFFFF, $font-family);
+        font-weight: 900;
+        background-color: #FF4343;
+        padding: 26px 0 26px;
+        max-width: 370px;
+        width: 100%;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: #E71414;
+        }
+
+        &:active
+        {
+            background-color: #FF4343;
+            box-shadow: 4px 4px 30px #FF4343;
+
+        }
+
+        @media (max-width:1024px) {
+            max-width: 313.15px;
+            padding: 24.5px 0 24.5px;
+        }
+
+        @media (max-width:767px) {
+            max-width: 100%;
+            padding: 15px 0 15px;
+        }
+    }
+}

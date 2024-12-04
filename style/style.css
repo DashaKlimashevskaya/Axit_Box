@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+@media (max-width: 767px) {
+  .header {
+    padding: 21.39px 0 21.39px;
+  }
+}
+.header .container {
+  border-bottom: 1px solid #BABBC5;
+}
+@media (max-width: 767px) {
+  .header .container {
+    border-bottom: 0;
+  }
+}
+.header__wrapper--logo {
+  width: 183.86px;
+  display: flex;
+}
+@media (max-width: 767px) {
+  .header__wrapper--logo {
+    width: 103.47px;
+  }
+}
+.header svg {
+  width: 100%;
+}
+.header__menu {
+  display: none;
+}
+@media (max-width: 767px) {
+  .header__menu {
+    background: none;
+    border: none;
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    display: none;
+  }
+}
+.nav__items {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .nav__items {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .nav__items {
+    display: none;
+  }
+}
+.nav__item {
+  text-align: center;
+  list-style-type: none;
+}
+.nav__item--link {
+  font-size: 13px;
+  line-height: 15px;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  font-weight: 700;
+  padding: 36px 0 32px;
+  display: block;
+  min-width: 134px;
+  border-bottom: 3px solid transparent;
+}
+.nav__item--link:hover {
+  border-bottom: 3px solid #BABBC5;
+}
+.nav__item--link:active {
+  border-bottom: 3px solid #E71414;
+  color: #E71414;
+}
+@media (max-width: 1024px) {
+  .nav__item--link {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.banner .container {
+  position: relative;
+  text-align: center;
+}
+
+.banner {
+  padding: 237px 0 120px;
+  background: url(../media/1.jpg) center/cover no-repeat;
+  position: relative;
+}
+.banner::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 43, 73, 0.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media (max-width: 1024px) {
+  .banner {
+    padding: 257px 0 126px;
+  }
+}
+@media (max-width: 767px) {
+  .banner {
+    padding: 106px 0 126px;
+  }
+}
+.banner__title {
+  font-size: 64px;
+  line-height: 75px;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 31.43px;
+  font-weight: 900;
+}
+@media (max-width: 1024px) {
+  .banner__title {
+    font-size: 48px;
+    line-height: 56px;
+    color: #FFFFFF;
+    font-family: "Raleway", sans-serif;
+  }
+}
+@media (max-width: 767px) {
+  .banner__title {
+    font-size: 36px;
+    line-height: 42px;
+    color: #FFFFFF;
+    font-family: "Raleway", sans-serif;
+  }
+}
+.banner__text {
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  max-width: 999px;
+  width: 100%;
+  margin: 0 auto 79.57px;
+}
+@media (max-width: 1024px) {
+  .banner__text {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-family: "Raleway", sans-serif;
+    max-width: 984px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__text {
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    font-family: "Raleway", sans-serif;
+    max-width: 100%;
+  }
+}
+.banner__btn {
+  font-size: 24px;
+  line-height: 28px;
+  color: #FFFFFF;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  background-color: #FF4343;
+  padding: 26px 0 26px;
+  max-width: 370px;
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.banner__btn:hover {
+  background-color: #E71414;
+}
+.banner__btn:active {
+  background-color: #FF4343;
+  box-shadow: 4px 4px 30px #FF4343;
+}
+@media (max-width: 1024px) {
+  .banner__btn {
+    max-width: 313.15px;
+    padding: 24.5px 0 24.5px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__btn {
+    max-width: 100%;
+    padding: 15px 0 15px;
+  }
+}/*# sourceMappingURL=style.css.map */
