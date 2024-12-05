@@ -60,6 +60,10 @@ $font-color: #000;
         width: 183.86px;
         display: flex;
 
+
+    @media (max-width:1024px) {
+        width: 193.86px;
+    }
         @media (max-width:767px) {
             width: 103.47px;
         }
@@ -91,7 +95,7 @@ $font-color: #000;
         align-items: center;
 
         @media (max-width:1024px) {
-            column-gap: 10px;
+            column-gap: 24px;
         }
 
         @media (max-width:767px) {
@@ -173,6 +177,7 @@ $font-color: #000;
 
     @media (max-width:1024px) {
         padding: 257px 0 126px;
+        margin-bottom: 81px;
     }
     @media (max-width:767px) {
         padding: 106px 0 52px;
@@ -192,6 +197,7 @@ $font-color: #000;
 
         @media (max-width:1024px) {
             @include font(48px, 56px, #FFFFFF, $font-family);
+            margin-bottom: 63px;
         }
 
         @media (max-width:767px) {
@@ -208,7 +214,8 @@ $font-color: #000;
 
         @media (max-width:1024px) {
             @include font(18px, 21px, #FFFFFF, $font-family);
-            max-width: 984px;
+            max-width: 777px;
+            margin: 0 auto 89.57px
         }
 
         @media (max-width:767px) {
@@ -259,11 +266,19 @@ $font-color: #000;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:88px 29px;
+
+    @media (max-width:1024px) {
+        gap: 49px 12px;
+    }
 }
 
 .about
 {
     margin-bottom: 133.57px;
+
+    @media (max-width:1024px) {
+        margin-bottom: 81.57px;
+    }
 
     .container
     {
@@ -288,8 +303,9 @@ $font-color: #000;
         justify-content: center;
 
         @media (max-width:1024px) {
-            height: 85px;
-            width: 85px;
+            height: 81px;
+            width: 69px;
+            margin: 0 auto 48.61px
         }
         @media (max-width:767px) {
             display: flex;
@@ -314,6 +330,7 @@ $font-color: #000;
 
         @media (max-width:1024px) {
             @include font(18px, 21px, #000000, $font-family);
+            margin-bottom: 21.43px;
         }
     }
 
@@ -333,6 +350,10 @@ $font-color: #000;
 	grid-template-columns: repeat(4, 1fr);
     gap:2px;
     margin-bottom: 114px;
+
+    @media (max-width:1024px) {
+        margin-bottom: 79px;
+    }
 
     @media (max-width:767px) {
         grid-template-columns: repeat(2, 1fr);
@@ -412,6 +433,11 @@ $font-color: #000;
     gap:0 30px;
     margin-bottom: 114px;
 
+    @media (max-width:1024px) {
+        padding: 0 19px;
+        gap:0 24px;
+    }
+
     @media (max-width:767px) {
         display: flex;
         flex-direction: column;
@@ -444,9 +470,9 @@ $font-color: #000;
         margin-bottom: 30px;
 
         @media (max-width:1024px) {
-            max-width: 227.08px;
-            height: 227.08px;
-            margin-bottom: 25.23px;
+            max-width: 234.08px;
+            height: 225.08px;
+            margin-bottom: 27.23px;
         }
 
         @media (max-width:767px) {
@@ -472,7 +498,7 @@ $font-color: #000;
 
         @media (max-width:1024px) {
             @include font(18px, 21px, #000000, $font-family);
-            margin-bottom: 4.6px;
+            margin-bottom: 7.6px;
         }
     }
 
@@ -548,6 +574,10 @@ $font-color: #000;
     margin-bottom: 114px;
     background-color: #5C3249;
 
+    @media (max-width:1024px) {
+        margin-bottom: 180px;
+    }
+
     @media (max-width:767px) {
        flex-direction: column;
     }
@@ -570,7 +600,8 @@ $font-color: #000;
         padding: 132px 0 123px 130px;
 
         @media (max-width:1024px) {
-            padding: 91px 10px 110.07px 88px;
+            padding: 27px 10px 66.07px 89px;
+            width: 43%;
         }
     }
     &__text

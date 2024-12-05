@@ -45,6 +45,11 @@
   width: 183.86px;
   display: flex;
 }
+@media (max-width: 1024px) {
+  .header__wrapper--logo {
+    width: 193.86px;
+  }
+}
 @media (max-width: 767px) {
   .header__wrapper--logo {
     width: 103.47px;
@@ -75,8 +80,8 @@
 }
 @media (max-width: 1024px) {
   .nav__items {
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    -moz-column-gap: 24px;
+         column-gap: 24px;
   }
 }
 @media (max-width: 767px) {
@@ -154,6 +159,7 @@
 @media (max-width: 1024px) {
   .banner {
     padding: 257px 0 126px;
+    margin-bottom: 81px;
   }
 }
 @media (max-width: 767px) {
@@ -177,6 +183,7 @@
     line-height: 56px;
     color: #FFFFFF;
     font-family: "Raleway", sans-serif;
+    margin-bottom: 63px;
   }
 }
 @media (max-width: 767px) {
@@ -203,7 +210,8 @@
     line-height: 21px;
     color: #FFFFFF;
     font-family: "Raleway", sans-serif;
-    max-width: 984px;
+    max-width: 777px;
+    margin: 0 auto 89.57px;
   }
 }
 @media (max-width: 767px) {
@@ -257,9 +265,19 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 88px 29px;
 }
+@media (max-width: 1024px) {
+  .about .container {
+    gap: 49px 12px;
+  }
+}
 
 .about {
   margin-bottom: 133.57px;
+}
+@media (max-width: 1024px) {
+  .about {
+    margin-bottom: 81.57px;
+  }
 }
 @media (max-width: 767px) {
   .about .container {
@@ -280,8 +298,9 @@
 }
 @media (max-width: 1024px) {
   .about__wrapper-logo {
-    height: 85px;
-    width: 85px;
+    height: 81px;
+    width: 69px;
+    margin: 0 auto 48.61px;
   }
 }
 @media (max-width: 767px) {
@@ -311,6 +330,7 @@
     line-height: 21px;
     color: #000000;
     font-family: "Raleway", sans-serif;
+    margin-bottom: 21.43px;
   }
 }
 .about__text {
@@ -333,6 +353,11 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 2px;
   margin-bottom: 114px;
+}
+@media (max-width: 1024px) {
+  .design {
+    margin-bottom: 79px;
+  }
 }
 @media (max-width: 767px) {
   .design {
@@ -422,6 +447,12 @@
   gap: 0 30px;
   margin-bottom: 114px;
 }
+@media (max-width: 1024px) {
+  .rewies .container {
+    padding: 0 19px;
+    gap: 0 24px;
+  }
+}
 @media (max-width: 767px) {
   .rewies .container {
     display: flex;
@@ -447,9 +478,9 @@
 }
 @media (max-width: 1024px) {
   .rewies__wrapper--image {
-    max-width: 227.08px;
-    height: 227.08px;
-    margin-bottom: 25.23px;
+    max-width: 234.08px;
+    height: 225.08px;
+    margin-bottom: 27.23px;
   }
 }
 @media (max-width: 767px) {
@@ -481,7 +512,7 @@
     line-height: 21px;
     color: #000000;
     font-family: "Raleway", sans-serif;
-    margin-bottom: 4.6px;
+    margin-bottom: 7.6px;
   }
 }
 .rewies__profession {
@@ -568,6 +599,11 @@
   margin-bottom: 114px;
   background-color: #5C3249;
 }
+@media (max-width: 1024px) {
+  .slider {
+    margin-bottom: 180px;
+  }
+}
 @media (max-width: 767px) {
   .slider {
     flex-direction: column;
@@ -589,7 +625,8 @@
 }
 @media (max-width: 1024px) {
   .slider__wrapper-text {
-    padding: 91px 10px 110.07px 88px;
+    padding: 27px 10px 66.07px 89px;
+    width: 43%;
   }
 }
 .slider__text {
