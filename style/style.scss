@@ -43,7 +43,7 @@ $font-color: #000;
     top: 0;
 
     @media (max-width:767px) {
-        padding: 21.39px 0 21.39px;
+        padding: 15.39px 0 15.39px;
     }
 
     .container
@@ -53,6 +53,8 @@ $font-color: #000;
 
         @media (max-width:767px) {
             border-bottom: 0;
+            padding: 0 20px;
+            column-gap: 30px;
         }
     }
     &__wrapper--logo
@@ -81,6 +83,7 @@ $font-color: #000;
             background: none;
             border: none;
             display: flex;
+            padding: 0 15px;
         }
     }
 }
@@ -181,6 +184,7 @@ $font-color: #000;
     }
     @media (max-width:767px) {
         padding: 106px 0 52px;
+        margin-bottom: 46px;
     }
 
     .container
@@ -203,6 +207,11 @@ $font-color: #000;
         @media (max-width:767px) {
             @include font(36px, 42px, #FFFFFF, $font-family);
         }
+        @media (max-width:320px) {
+            max-width: 280px;
+            margin: 0 auto;
+            margin-bottom: 33px;
+        }
     }
     &__text
     {
@@ -221,6 +230,11 @@ $font-color: #000;
         @media (max-width:767px) {
             @include font(14px, 16px, #FFFFFF, $font-family);
             max-width: 100%;
+        }
+        @media (max-width:320px) {
+            max-width: 280px;
+            margin: 0 auto;
+            margin-bottom: 66px;
         }
     }
     &__btn
@@ -255,7 +269,11 @@ $font-color: #000;
 
         @media (max-width:767px) {
             max-width: 100%;
-            max-width: 100%;
+            padding: 15px 0 15px;
+        }
+
+        @media (max-width:320px) {
+            max-width: 279.24px;
             padding: 15px 0 15px;
         }
     }
@@ -280,6 +298,10 @@ $font-color: #000;
         margin-bottom: 81.57px;
     }
 
+    @media (max-width:767px) {
+        margin-bottom: 55.57px;
+    }
+
     .container
     {
         @extend %about__container;
@@ -289,7 +311,7 @@ $font-color: #000;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            row-gap: 41.46px;
+            row-gap: 62.46px;
         }
     }
 
@@ -310,8 +332,9 @@ $font-color: #000;
         @media (max-width:767px) {
             display: flex;
             justify-content: center;
-            width: 75px;
-            height: 75px;
+            width: 62px;
+            height: 65px;
+            margin: 0 auto 42.61px
         }
 
         & svg
@@ -331,6 +354,9 @@ $font-color: #000;
         @media (max-width:1024px) {
             @include font(18px, 21px, #000000, $font-family);
             margin-bottom: 21.43px;
+        }
+        @media (max-width:767px) {
+            margin-bottom: 8.43px;
         }
     }
 
@@ -357,12 +383,17 @@ $font-color: #000;
 
     @media (max-width:767px) {
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 36px;
     }
 
     &__wrapper--image
     {
         position: relative;
 		padding-top: 90%;
+
+        @media (max-width:767px) {
+            padding-top: 89%;
+        }
     }
 
     &__img{
@@ -431,7 +462,6 @@ $font-color: #000;
     display: grid;
 	grid-template-columns: repeat(4, 1fr);
     gap:0 30px;
-    margin-bottom: 114px;
 
     @media (max-width:1024px) {
         padding: 0 19px;
@@ -450,6 +480,10 @@ $font-color: #000;
 {
     margin-bottom: 114px;
 
+    @media (max-width:767px) {
+        margin-bottom: 33px;
+    }
+
     .container
     {
         @extend %rewies__container;
@@ -458,7 +492,7 @@ $font-color: #000;
     &__wrapper-item
     {
         @media (max-width:767px) {
-            max-width: 270px;
+            max-width: 280px;
         }
     }
 
@@ -476,9 +510,9 @@ $font-color: #000;
         }
 
         @media (max-width:767px) {
-            max-width: 280px;
+            max-width: 100%;
             height: 227.25px;
-            margin-bottom:25.25px;
+            margin-bottom:27.25px;
         }
     }
 
@@ -571,7 +605,7 @@ $font-color: #000;
 .slider
 {
     display: flex;
-    margin-bottom: 114px;
+    margin-bottom: 183px;
     background-color: #5C3249;
 
     @media (max-width:1024px) {
@@ -580,12 +614,17 @@ $font-color: #000;
 
     @media (max-width:767px) {
        flex-direction: column;
+       margin-bottom: 92px;
     }
 
     &__wrapper-img
     {
         width: 49%;
         overflow: hidden;
+
+        @media (max-width:767px) {
+            width: 100%;
+        }
     }
 
     &__img{
@@ -596,12 +635,22 @@ $font-color: #000;
 
     &__wrapper-text
     {
-        width: 51%;
-        padding: 132px 0 123px 130px;
+        width: 52%;
+        padding: 132px 0 123px 138px;
 
         @media (max-width:1024px) {
             padding: 27px 10px 66.07px 89px;
-            width: 43%;
+        }
+
+        @media (max-width:767px) {
+            padding: 20px 22px 95px 19px;
+            width: 100%;
+            text-align: left;
+        }
+        @media (max-width:320px) {
+            padding: 20px 22px 95px 19px;
+            width: 100%;
+            text-align: center;
         }
     }
     &__text
@@ -618,15 +667,15 @@ $font-color: #000;
         @media (max-width:1024px) {
             font-size: 24px;
             line-height: 32px;
-            margin-bottom: 24px;
+            margin-bottom: 15px;
+            max-width: 330px;
         }
         @media (max-width:767px) {
-            /*font-size: 24px;
-            line-height: 32px;
-            margin-bottom: 24px;*/
+            max-width: 100%;
+            margin-bottom: 28px;
         }
     }
-    &__footnote
+    &__author
     {
         @include font(13px, 15px, #fff, $font-family);
         font-weight: 700;
@@ -634,9 +683,7 @@ $font-color: #000;
 
         @media (max-width:1024px) {
             @include font(12px, 14px, #fff, $font-family);
-        }
-        @media (max-width:767px) {
-            /* @include font(13px, 15px, #fff, $font-family);*/
+            text-align: left;
         }
     }
 }
@@ -645,6 +692,10 @@ $font-color: #000;
 {
     text-align: center;
     margin-bottom: 114px;
+
+    @media (max-width:767px) {
+        margin-bottom: 45px;
+    }
 
     &__title
     {
@@ -658,6 +709,12 @@ $font-color: #000;
         }
         @media (max-width:767px) {
             @include font(18px, 21px, #000, $font-family);
+            margin-bottom: 20.29px;
+        }
+        @media (max-width:320px) {
+            max-width: 280px;
+            width: 100%;
+            margin: 0 auto 20.29px;
         }
     }
 
@@ -672,7 +729,8 @@ $font-color: #000;
             @include font(14px, 16px, #000, $font-family);
         }
         @media (max-width:767px) {
-            @include font(13px, 25px, #000, $font-family);
+            @include font(13px, 15px, #000, $font-family);
+            margin-bottom: 14.71px;
         }
     }
     &__btn
@@ -701,14 +759,18 @@ $font-color: #000;
         }
 
         @media (max-width:1024px) {
+            @include font(18px, 21px, #FFFFFF, $font-family);
             max-width: 313.15px;
             padding: 24.5px 0 24.5px;
         }
 
         @media (max-width:767px) {
             max-width: 100%;
-            max-width: 100%;
-            padding: 15px 0 15px;
+            padding: 28px 0 28px
+        }
+        @media (max-width:320px) {
+            max-width: 279px;
+            width: 100%;
         }
     }
 }
@@ -793,7 +855,8 @@ $font-color: #000;
             column-gap: 4.21px;
          }
          @media (max-width:767px) {
-            column-gap: 6.09px;
+            column-gap: 17.09px;
+            margin-top: 47px;
          }
     }
 
@@ -810,8 +873,8 @@ $font-color: #000;
         }
 
         @media (max-width:767px) {
-            width: 39.61px;
-            height: 39.61px;
+            width: 33.61px;
+            height: 33.61px;
         }
     }
 
@@ -828,7 +891,7 @@ $font-color: #000;
         }
     
         @media (max-width:767px) {
-            margin-top: 33.14px;
+            margin-top: 37.14px;
             padding: 29.86px 0 28.14px;
         }
     }
@@ -847,6 +910,11 @@ $font-color: #000;
     
         @media (max-width:767px) {
             max-width: 100%;
+        }
+
+        @media (max-width:320px) {
+            max-width: 280px;
+            width: 100%;
         }
     }
     &__span
