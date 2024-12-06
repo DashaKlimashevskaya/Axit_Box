@@ -1,4 +1,5 @@
-$font-family:"Raleway", sans-serif;
+$primary-font-family:"Raleway", sans-serif;
+$secondary-font-family:"Cardo", sans-serif;
 $font-color: #000;
 
 *
@@ -13,7 +14,10 @@ $font-color: #000;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
-    text-align: center;
+
+    @media (max-width:767px) {
+        padding: 0 20px;
+    }
 }
 
 
@@ -24,14 +28,15 @@ $font-color: #000;
     justify-content: space-between;
     column-gap: 30px;
     position: relative;
+    padding: 0 20px;
 }
 
-@mixin font($font-size, $line-height, $color, $font-family)
+@mixin font($font-size, $line-height, $color, $primary-font-family)
 {
     font-size:$font-size;
     line-height:$line-height;
     color:$color;
-    font-family:$font-family;
+    font-family:$primary-font-family;
 }
 
 .header
@@ -57,7 +62,7 @@ $font-color: #000;
             column-gap: 30px;
         }
     }
-    &__wrapper--logo
+    &__logo
     {
         width: 183.86px;
         display: flex;
@@ -72,7 +77,7 @@ $font-color: #000;
     }
     & svg
     {
-        width: 100%;
+        max-width: 100%;
     }
 
     &__menu
@@ -110,9 +115,9 @@ $font-color: #000;
         text-align: center;
         list-style-type: none;
     }
-    &__item--link
+    &__link
     {
-        @include font(13px, 15px, #FFFFFF, $font-family);
+        @include font(13px, 15px, #FFFFFF, $primary-font-family);
         text-transform: uppercase;
         text-decoration: none;
         position: relative;
@@ -121,18 +126,17 @@ $font-color: #000;
         display: block;
         min-width: 134px;
         border-bottom: 3px solid transparent; 
+        transition: all .5s linear;
 
         &:hover
         {
             border-bottom: 3px solid #BABBC5;
-            transition: border-bottom .5s linear;
         }
 
         &:active
         {
             border-bottom: 3px solid #E71414;
             color: #E71414;
-            transition: border-bottom .5s linear, color .5s linear;
         }
 
         @media (max-width:1024px) {
@@ -161,10 +165,10 @@ $font-color: #000;
 }
 .banner
 {
-    padding: 237px 0 120px;
+    padding: 230px 0 120px;
     background: url(../media/1.jpg) center/cover no-repeat;
     position: relative;
-    margin-bottom: 109px;
+    margin-bottom: 116px;
 
     &::before
     {
@@ -193,53 +197,45 @@ $font-color: #000;
     }
     &__title
     {
-        @include font(64px, 75px, #FFFFFF, $font-family);
+        @include font(64px, 75px, #FFFFFF, $primary-font-family);
         text-transform: uppercase;
         margin-bottom: 31.43px;
         font-weight: 900;
         font-weight: 900;
 
         @media (max-width:1024px) {
-            @include font(48px, 56px, #FFFFFF, $font-family);
+            @include font(48px, 56px, #FFFFFF, $primary-font-family);
             margin-bottom: 63px;
         }
 
         @media (max-width:767px) {
-            @include font(36px, 42px, #FFFFFF, $font-family);
-        }
-        @media (max-width:320px) {
-            max-width: 280px;
-            margin: 0 auto;
+            @include font(36px, 42px, #FFFFFF, $primary-font-family);
             margin-bottom: 33px;
         }
     }
     &__text
     {
-        @include font(24px, 28px, #FFFFFF, $font-family);
+        @include font(24px, 28px, #FFFFFF, $primary-font-family);
         font-weight: 400;
         width: 100%;
         margin: 0 auto 80.57px;
         max-width: 999px;
 
         @media (max-width:1024px) {
-            @include font(18px, 21px, #FFFFFF, $font-family);
+            @include font(18px, 21px, #FFFFFF, $primary-font-family);
             max-width: 777px;
             margin: 0 auto 89.57px
         }
 
         @media (max-width:767px) {
-            @include font(14px, 16px, #FFFFFF, $font-family);
+            @include font(14px, 16px, #FFFFFF, $primary-font-family);
             max-width: 100%;
-        }
-        @media (max-width:320px) {
-            max-width: 280px;
-            margin: 0 auto;
             margin-bottom: 66px;
         }
     }
     &__btn
     {
-        @include font(24px, 28px, #FFFFFF, $font-family);
+        @include font(24px, 28px, #FFFFFF, $primary-font-family);
         font-weight: 900;
         background-color: #FF4343;
         padding: 26px 0 26px;
@@ -248,18 +244,17 @@ $font-color: #000;
         border: none;
         text-transform: uppercase;
         cursor: pointer;
+        transition: all .5s linear;
 
         &:hover
         {
             background-color: #E71414;
-            transition: background-color .5s linear;
         }
 
         &:active
         {
             background-color: #FF4343;
             box-shadow: 4px 4px 30px #FF4343;
-            transition: box-shadow .5s linear, background-color .5s linear;
         }
 
         @media (max-width:1024px) {
@@ -271,19 +266,15 @@ $font-color: #000;
             max-width: 100%;
             padding: 15px 0 15px;
         }
-
-        @media (max-width:320px) {
-            max-width: 279.24px;
-            padding: 15px 0 15px;
-        }
     }
 }
 
 %about__container
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap:88px 29px;
+    text-align: center;
 
     @media (max-width:1024px) {
         gap: 49px 12px;
@@ -299,7 +290,7 @@ $font-color: #000;
     }
 
     @media (max-width:767px) {
-        margin-bottom: 55.57px;
+        margin-bottom: 39.57px;
     }
 
     .container
@@ -311,7 +302,7 @@ $font-color: #000;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            row-gap: 62.46px;
+            row-gap: 46.46px;
         }
     }
 
@@ -346,13 +337,13 @@ $font-color: #000;
     
     &__title
     {
-        @include font(24px, 28px, #000000, $font-family);
+        @include font(24px, 28px, #000000, $primary-font-family);
         font-weight: 900;
         margin-bottom: 43.43px;
         text-transform: uppercase;
 
         @media (max-width:1024px) {
-            @include font(18px, 21px, #000000, $font-family);
+            @include font(18px, 21px, #000000, $primary-font-family);
             margin-bottom: 21.43px;
         }
         @media (max-width:767px) {
@@ -362,10 +353,10 @@ $font-color: #000;
 
     &__text
     {
-        @include font(18px, 21px, #6C7279, $font-family);
+        @include font(18px, 21px, #6C7279, $primary-font-family);
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #6C7279, $font-family);
+            @include font(14px, 16px, #6C7279, $primary-font-family);
         }
     }
 }
@@ -383,10 +374,10 @@ $font-color: #000;
 
     @media (max-width:767px) {
         grid-template-columns: repeat(2, 1fr);
-        margin-bottom: 36px;
+        margin-bottom: 38px;
     }
 
-    &__wrapper--image
+    &__wrapper-img
     {
         position: relative;
 		padding-top: 90%;
@@ -397,12 +388,12 @@ $font-color: #000;
     }
 
     &__img{
-		object-fit: cover;		
+		object-fit: cover;	
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		left: 0;
-		top: 0;
+        top: 0;
+        left: 0;
 	}
 
     &__content{
@@ -417,28 +408,27 @@ $font-color: #000;
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
+        transition: all .3s linear;
 
 		&:hover{
 			opacity: 1;
 			display: flex;
             background:  rgba($color: #FF4343, $alpha: 0.8);
-            transition: background .3s linear;
 		}
         &:active{
 			opacity: 1;
 			display: flex;
             background:  rgba($color: #B90C0C, $alpha: 0.8);
-            transition: background .4s linear;
 		}
 	}
     &__title{
-		@include font(24px, 28px, #fff, $font-family);
+		@include font(24px, 28px, #fff, $primary-font-family);
         font-weight: 900;
 		margin-bottom: 47px;
 		text-transform: uppercase;
 
         @media (max-width:1024px) {
-            @include font(18px, 21px, #fff, $font-family);
+            @include font(18px, 21px, #fff, $primary-font-family);
             margin-bottom: 12.81px;
         }
 
@@ -448,11 +438,11 @@ $font-color: #000;
 	}
 
 	&__text{
-		@include font(18px, 21px, #fff, $font-family);
+		@include font(18px, 21px, #fff, $primary-font-family);
         text-transform: capitalize;
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #fff, $font-family);
+            @include font(14px, 16px, #fff, $primary-font-family);
         }
 	}
 }
@@ -478,10 +468,14 @@ $font-color: #000;
 
 .rewies
 {
-    margin-bottom: 114px;
+    margin-bottom: 124px;
+
+    @media (max-width:1024px) {
+        margin-bottom: 77px;
+    }
 
     @media (max-width:767px) {
-        margin-bottom: 33px;
+        margin-bottom: 37px;
     }
 
     .container
@@ -489,34 +483,35 @@ $font-color: #000;
         @extend %rewies__container;
     }
 
-    &__wrapper-item
+    &__content
     {
         @media (max-width:767px) {
             max-width: 280px;
         }
     }
 
-    &__wrapper--image
+    &__wrapper-img
     {
-        max-width: 270px;
-        height: 270px;
+        position: relative;
         overflow: hidden;
         margin-bottom: 30px;
+        padding-top: 100%;
 
         @media (max-width:1024px) {
-            max-width: 234.08px;
-            height: 225.08px;
-            margin-bottom: 27.23px;
+            margin-bottom: 26.23px;
+            padding-top: 99%;
         }
 
         @media (max-width:767px) {
-            max-width: 100%;
-            height: 227.25px;
             margin-bottom:27.25px;
+            padding-top: 81%;
         }
     }
 
     &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -524,27 +519,25 @@ $font-color: #000;
 
     &__name
     {
-        @include font(24px, 28px, #000000, $font-family);
-        margin-bottom: 5.29px;
-        text-align: left;
+        @include font(24px, 28px, #000000, $primary-font-family);
+        margin-bottom: 7.29px;
         text-transform: capitalize;
         font-weight: 700;
 
         @media (max-width:1024px) {
-            @include font(18px, 21px, #000000, $font-family);
-            margin-bottom: 7.6px;
+            @include font(18px, 21px, #000000, $primary-font-family);
+            margin-bottom: 6.6px;
         }
     }
 
     &__profession
     {
-        @include font(18px, 21px, #FF4343, $font-family);
-        text-align: left;
+        @include font(18px, 21px, #FF4343, $primary-font-family);
         text-transform: uppercase;
         margin-bottom: 17.86px;
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #FF4343, $font-family);
+            @include font(14px, 16px, #FF4343, $primary-font-family);
             margin-bottom: 22.45px;
         }
 
@@ -555,13 +548,12 @@ $font-color: #000;
 
     &__text
     {
-        @include font(18px, 21px, #6C7279, $font-family);
-        text-align: left;
+        @include font(18px, 21px, #6C7279, $primary-font-family);
         margin-bottom: 37.86px;
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #6C7279, $font-family);
-            margin-bottom: 39.2px;
+            @include font(14px, 16px, #6C7279, $primary-font-family);
+            margin-bottom: 40.2px;
         }
 
         @media (max-width:767px) {
@@ -569,13 +561,13 @@ $font-color: #000;
         }
     }
 
-    &__wrapper--icon
+    &__wrapper-icon
     {
         display: flex;
         column-gap: 6px;
 
         @media (max-width:1024px) {
-            column-gap: 4.21px;
+            column-gap: 5.21px;
          }
          @media (max-width:767px) {
             column-gap: 6.09px;
@@ -584,12 +576,32 @@ $font-color: #000;
 
     &__icon
     {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #C6CBCD;
+        transition: all .5s linear;
 
-        & svg
-        {
-            max-width: 100%;
-            max-height: 100%;
+        &:hover path{
+            fill: #E71414;
+            transition: fill .5s linear;
         }
+        &:hover{
+            border: 1px solid #E71414;
+            box-shadow: 0px 0px 30px #E71414;
+        }
+
+        &:active path{
+            fill: #FF4343;
+            transition: fill .5s linear;
+        }
+        &:active{
+            border: 1px solid #FF4343;
+            box-shadow: 0px 0px 30px #FF4343;
+        }
+
         @media (max-width:1024px) {
            width: 32.8px;
            height: 32.8px;
@@ -602,24 +614,71 @@ $font-color: #000;
     }
 }
 
-.slider
+.swiper 
 {
-    display: flex;
-    margin-bottom: 183px;
-    background-color: #5C3249;
+    margin-bottom: 121px;
 
     @media (max-width:1024px) {
-        margin-bottom: 180px;
+        margin-bottom: 93px;
     }
 
     @media (max-width:767px) {
-       flex-direction: column;
-       margin-bottom: 92px;
+        margin-bottom: 52px;
+    }
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal
+{
+    bottom: 0;
+}
+.swiper-pagination
+{
+    display: flex;
+    column-gap: 25px;
+    justify-content: center;
+
+    @media (max-width:1024px) {
+        column-gap: 17px;
+    }
+    @media (max-width:767px) {
+        column-gap: 12px;
+    }
+}
+.swiper-pagination-bullet
+{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #7E5D6F;
+    background-color: transparent;
+    opacity: 1;
+
+    @media (max-width:1024px) {
+        width: 10px;
+        height: 10px;
+    }
+}
+.swiper-pagination-bullet-active
+{
+    background-color: #7E5D6F;
+}
+.slider
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 45px;
+
+    @media (max-width:1024px) {
+        margin-bottom: 34px;
+    }
+
+    @media (max-width:767px) {
+        display: flex;
+        flex-direction: column;
     }
 
     &__wrapper-img
     {
-        width: 49%;
+        position: relative;
+        padding-top: 65%;
         overflow: hidden;
 
         @media (max-width:767px) {
@@ -628,6 +687,9 @@ $font-color: #000;
     }
 
     &__img{
+        position: absolute;
+        top: 0;
+        left: 0;
 		object-fit: cover;		
 		width: 100%;
 		height: 100%;
@@ -635,38 +697,32 @@ $font-color: #000;
 
     &__wrapper-text
     {
-        width: 52%;
-        padding: 132px 0 123px 138px;
+        display: flex;
+        background-color: #5C3249;
+        padding: 44px 10px 30px 125px;
+        flex-direction: column;
+        justify-content: center;
 
         @media (max-width:1024px) {
-            padding: 27px 10px 66.07px 89px;
+            padding: 10px 10px 59px 78px;
         }
 
         @media (max-width:767px) {
-            padding: 20px 22px 95px 19px;
-            width: 100%;
-            text-align: left;
-        }
-        @media (max-width:320px) {
-            padding: 20px 22px 95px 19px;
-            width: 100%;
             text-align: center;
+            padding: 27px 22px 100px 19px;
+            width: 100%;
         }
     }
     &__text
     {
+        @include font(36px, 49px, #fff, $secondary-font-family);
         max-width: 471px;
-        font-size: 36px;
-        line-height: 49px;
-        color: #fff;
-        font-family: "Cardo", sans-serif;
         font-style: italic;
         text-transform: capitalize;
         margin-bottom: 24px;
 
         @media (max-width:1024px) {
-            font-size: 24px;
-            line-height: 32px;
+            @include font(24px, 32px, #fff, $secondary-font-family);
             margin-bottom: 15px;
             max-width: 330px;
         }
@@ -677,12 +733,12 @@ $font-color: #000;
     }
     &__author
     {
-        @include font(13px, 15px, #fff, $font-family);
+        @include font(13px, 15px, #fff, $primary-font-family);
         font-weight: 700;
         text-transform: uppercase;
 
         @media (max-width:1024px) {
-            @include font(12px, 14px, #fff, $font-family);
+            @include font(12px, 14px, #fff, $primary-font-family);
             text-align: left;
         }
     }
@@ -693,49 +749,49 @@ $font-color: #000;
     text-align: center;
     margin-bottom: 114px;
 
+    @media (max-width:1024px) {
+        margin-bottom: 80px;
+    }
+
     @media (max-width:767px) {
         margin-bottom: 45px;
     }
 
     &__title
     {
-        @include font(16px, 19px, #000, $font-family);
+        @include font(30px, 35px, #000, $primary-font-family);
         font-weight: 500;
         text-transform: capitalize;
-        margin-bottom: 29.29px;
+        margin-bottom: 22.29px;
 
         @media (max-width:1024px) {
-            @include font(24px, 28px, #000, $font-family);
+            @include font(24px, 28px, #000, $primary-font-family);
         }
         @media (max-width:767px) {
-            @include font(18px, 21px, #000, $font-family);
+            @include font(18px, 21px, #000, $primary-font-family);
             margin-bottom: 20.29px;
-        }
-        @media (max-width:320px) {
-            max-width: 280px;
-            width: 100%;
-            margin: 0 auto 20.29px;
         }
     }
 
     &__text
     {
-        @include font(18px, 21px, #000, $font-family);
+        @include font(18px, 21px, #000, $primary-font-family);
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 48.71px;
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #000, $font-family);
+            @include font(14px, 16px, #000, $primary-font-family);
+            margin-bottom: 44.71px;
         }
         @media (max-width:767px) {
-            @include font(13px, 15px, #000, $font-family);
-            margin-bottom: 14.71px;
+            @include font(13px, 15px, #000, $primary-font-family);
+            margin-bottom: 13.71px;
         }
     }
     &__btn
     {
-        @include font(24px, 28px, #FFFFFF, $font-family);
+        @include font(24px, 28px, #FFFFFF, $primary-font-family);
         font-weight: 900;
         background-color: #FF4343;
         padding: 26px 0 26px;
@@ -744,45 +800,43 @@ $font-color: #000;
         border: none;
         text-transform: uppercase;
         cursor: pointer;
+        transition: all .5s linear;
 
         &:hover
         {
             background-color: #E71414;
-            transition: background-color .5s linear;
         }
 
         &:active
         {
             background-color: #FF4343;
             box-shadow: 4px 4px 30px #FF4343;
-            transition: box-shadow .5s linear, background-color .5s linear;
         }
 
         @media (max-width:1024px) {
-            @include font(18px, 21px, #FFFFFF, $font-family);
+            @include font(18px, 21px, #FFFFFF, $primary-font-family);
             max-width: 313.15px;
-            padding: 24.5px 0 24.5px;
+            padding: 27.5px 0 27.5px;
         }
 
         @media (max-width:767px) {
             max-width: 100%;
             padding: 28px 0 28px
         }
-        @media (max-width:320px) {
-            max-width: 279px;
-            width: 100%;
-        }
     }
 }
 
 %footer__container
 {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+    text-align: center;
 
     @media (max-width:767px) {
+        display: flex;
         flex-direction: column;
-        row-gap: 58.91px;
+        row-gap: 59.91px;
         align-items: center;
     }
 }
@@ -803,8 +857,7 @@ $font-color: #000;
     {
         @extend %footer__container;
     }
-
-    &__wrapper--items
+    &__wrapper-items
     {
         max-width: 370px;
         width: 100%;
@@ -820,13 +873,13 @@ $font-color: #000;
 
     &__title
     {
-        @include font(18px, 21px, #fff, $font-family); 
+        @include font(18px, 21px, #fff, $primary-font-family); 
         font-weight: 700;
         text-transform: uppercase;
         margin-bottom: 27.14px;     
         
         @media (max-width:1024px) {
-            @include font(14px, 16px, #fff, $font-family);
+            @include font(14px, 16px, #fff, $primary-font-family);
             margin-bottom: 17.31px;   
         }
     
@@ -836,15 +889,15 @@ $font-color: #000;
     }
     &__text
     {
-        @include font(18px, 21px, #fff, $font-family);
+        @include font(18px, 21px, #fff, $primary-font-family);
         text-transform: capitalize;
 
         @media (max-width:1024px) {
-            @include font(14px, 16px, #fff, $font-family); 
+            @include font(14px, 16px, #fff, $primary-font-family); 
         }
     }
 
-    &__wrapper--icon
+    &__wrapper-icon
     {
         display: flex;
         column-gap: 26px;
@@ -852,21 +905,43 @@ $font-color: #000;
         margin-top: 48px;
 
         @media (max-width:1024px) {
-            column-gap: 4.21px;
+            margin-top: 32px;
+            column-gap: 23.21px;
          }
          @media (max-width:767px) {
-            column-gap: 17.09px;
-            margin-top: 47px;
+            column-gap: 16.09px;
+            margin-top: 46px;
          }
     }
 
     &__icon
     {
-        & svg
-        {
-            max-width: 100%;
-            max-height: 100%;
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #C6CBCD;
+        transition: all .5s linear;
+
+        &:hover path{
+            fill: #E71414;
+            transition: fill .5s linear;
         }
+        &:hover{
+            border: 1px solid #E71414;
+            box-shadow: 0px 0px 30px #E71414;
+        }
+
+        &:active path{
+            fill: #FF4343;
+            transition: fill .5s linear;
+        }
+        &:active{
+            border: 1px solid #FF4343;
+            box-shadow: 0px 0px 30px #FF4343;
+        }
+
         @media (max-width:1024px) {
            width: 32.8px;
            height: 32.8px;
@@ -877,44 +952,49 @@ $font-color: #000;
             height: 33.61px;
         }
     }
+    
+    &__container-developer
+    {
+        display: flex;
+        margin: 0 auto;
+        max-width: 385px;
+        width: 100%;
+        padding: 0 15px;
 
-    &__wrapper--item
+        @media (max-width:1024px) {
+            max-width: 341px;
+        }
+    }
+    &__wrapper-developer
     {
         margin-top: 67.14px;
         background-color: #2C3154;
-        padding: 23.86px 0 24.14px;
+        padding: 24.86px 0 24.14px;
         text-align: center;
 
         @media (max-width:1024px) {
             margin-top: 43.13px;  
-            padding: 14.28px 0 14.43px;
+            padding: 12.28px 0 14.28px;
         }
     
         @media (max-width:767px) {
             margin-top: 37.14px;
-            padding: 29.86px 0 28.14px;
+            margin-top: 39.14px;
+            padding: 30.86px 0 28.14px;
         }
     }
     &__developer
     {
-        max-width: 370px;
-        width: 100%;
-        margin: 0 auto;
-        @include font(18px, 21px, #808080, $font-family);
+        @include font(18px, 21px, #808080, $primary-font-family);
         text-transform: capitalize;
 
         @media (max-width:1024px) {
             max-width: 314px;
-            @include font(14px, 16px, #808080, $font-family);
+            @include font(14px, 16px, #808080, $primary-font-family);
         }
     
         @media (max-width:767px) {
             max-width: 100%;
-        }
-
-        @media (max-width:320px) {
-            max-width: 280px;
-            width: 100%;
         }
     }
     &__span
