@@ -16,6 +16,60 @@
   }
 }
 
+@keyframes shake-bottom {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+@keyframes logo-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
 .header .container {
   display: flex;
   align-items: center;
@@ -52,6 +106,7 @@
 .header__logo {
   width: 183.86px;
   display: flex;
+  animation: logo-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 @media (max-width: 1024px) {
   .header__logo {
@@ -296,11 +351,7 @@
 }
 @media (max-width: 767px) {
   .about .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 46.46px;
+    grid-template-columns: 1fr;
   }
 }
 .about__wrapper-logo {
@@ -320,8 +371,6 @@
 }
 @media (max-width: 767px) {
   .about__wrapper-logo {
-    display: flex;
-    justify-content: center;
     width: 62px;
     height: 65px;
     margin: 0 auto 42.61px;
@@ -480,10 +529,8 @@
 }
 @media (max-width: 767px) {
   .rewies .container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     row-gap: 49.39px;
-    align-items: center;
   }
 }
 
@@ -498,11 +545,6 @@
 @media (max-width: 767px) {
   .rewies {
     margin-bottom: 37px;
-  }
-}
-@media (max-width: 767px) {
-  .rewies__content {
-    max-width: 280px;
   }
 }
 .rewies__wrapper-img {
@@ -618,10 +660,10 @@
   align-items: center;
   border: 1px solid #C6CBCD;
   transition: all 0.5s linear;
+  animation: heartbeat 2.5s ease-in-out infinite both;
 }
 .rewies__icon:hover path {
   fill: #E71414;
-  transition: fill 0.5s linear;
 }
 .rewies__icon:hover {
   border: 1px solid #E71414;
@@ -629,7 +671,6 @@
 }
 .rewies__icon:active path {
   fill: #FF4343;
-  transition: fill 0.5s linear;
 }
 .rewies__icon:active {
   border: 1px solid #FF4343;
@@ -763,6 +804,7 @@
   color: #fff;
   font-family: "Cardo", sans-serif;
   max-width: 471px;
+  width: 100%;
   font-style: italic;
   text-transform: capitalize;
   margin-bottom: 24px;
@@ -790,6 +832,8 @@
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
+  max-width: 471px;
+  width: 100%;
 }
 @media (max-width: 1024px) {
   .slider__author {
@@ -885,6 +929,7 @@
 }
 .download__btn:hover {
   background-color: #E71414;
+  animation: shake-bottom 1.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 .download__btn:active {
   background-color: #FF4343;
@@ -916,10 +961,8 @@
 }
 @media (max-width: 767px) {
   .footer .container {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     row-gap: 59.91px;
-    align-items: center;
   }
 }
 
@@ -935,20 +978,6 @@
 @media (max-width: 767px) {
   .footer {
     padding-top: 34px;
-  }
-}
-.footer__wrapper-items {
-  max-width: 370px;
-  width: 100%;
-}
-@media (max-width: 1024px) {
-  .footer__wrapper-items {
-    max-width: 315px;
-  }
-}
-@media (max-width: 767px) {
-  .footer__wrapper-items {
-    max-width: 100%;
   }
 }
 .footer__title {
@@ -1018,10 +1047,10 @@
   align-items: center;
   border: 1px solid #C6CBCD;
   transition: all 0.5s linear;
+  animation: heartbeat 2.5s ease-in-out infinite both;
 }
 .footer__icon:hover path {
   fill: #E71414;
-  transition: fill 0.5s linear;
 }
 .footer__icon:hover {
   border: 1px solid #E71414;
@@ -1029,7 +1058,6 @@
 }
 .footer__icon:active path {
   fill: #FF4343;
-  transition: fill 0.5s linear;
 }
 .footer__icon:active {
   border: 1px solid #FF4343;
@@ -1048,7 +1076,6 @@
   }
 }
 .footer__container-developer {
-  display: flex;
   margin: 0 auto;
   max-width: 385px;
   width: 100%;
@@ -1087,7 +1114,6 @@
 }
 @media (max-width: 1024px) {
   .footer__developer {
-    max-width: 314px;
     font-size: 14px;
     line-height: 16px;
     color: #808080;
