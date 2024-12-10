@@ -654,6 +654,10 @@ $font-color: #000;
         transition: all .5s linear;
         animation: heartbeat 2.5s ease-in-out infinite both;
 
+        & path {
+            transition: all .5s linear;
+        }
+
         &:hover path{
             fill: #E71414;
         }
@@ -981,6 +985,10 @@ $font-color: #000;
         border: 1px solid #C6CBCD;
         transition: all .5s linear;
         animation: heartbeat 2.5s ease-in-out infinite both;
+
+        & path {
+            transition: all .5s linear;
+        }
 
         &:hover path{
             fill: #E71414;
