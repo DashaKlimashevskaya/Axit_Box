@@ -662,6 +662,9 @@
   transition: all 0.5s linear;
   animation: heartbeat 2.5s ease-in-out infinite both;
 }
+.rewies__icon path {
+  transition: all 0.5s linear;
+}
 .rewies__icon:hover path {
   fill: #E71414;
 }
@@ -1048,6 +1051,9 @@
   border: 1px solid #C6CBCD;
   transition: all 0.5s linear;
   animation: heartbeat 2.5s ease-in-out infinite both;
+}
+.footer__icon path {
+  transition: all 0.5s linear;
 }
 .footer__icon:hover path {
   fill: #E71414;
