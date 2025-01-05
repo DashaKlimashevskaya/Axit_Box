@@ -45,15 +45,39 @@
                         </li>
                     </ul>
                 </nav>
-                <button href="#" class="header__menu">
+                <button href="#" class="header__menu active">
                     <svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0H24V3H0V0ZM0 7.5H24V10.5H0V7.5ZM0 15H24V18H0V15Z" fill="white"/>
                         </svg>                        
                 </button>
+                <button class="header__close-menu inactive">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.454102 16.9707L8.93938 8.48542L17.4247 0.000140667L19.546 2.12146L2.57542 19.092L0.454102 16.9707Z" fill="white"/>
+                        <path d="M2.5752 0L11.0605 8.48528L19.5458 16.9706L17.4244 19.0919L0.453875 2.12132L2.5752 0Z" fill="white"/>
+                        </svg>                        
+                </button>
             </div>
+            <div class="header__mobile-navigation inaction">
+                <ul class="header__items">
+                <li class="header__item">
+                    <a href="" class="header__link">features</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">works</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">our team</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">testimonials</a>
+                </li>
+                <li class="header__item">
+                    <a href="" class="header__link">download</a>
+                </li>
+            </ul></div>
         </header>
         <section class="banner">
-            <div class="container">
+            <div class="container active">
                 <h1 class="banner__title">Your Favorite One Page Multi Purpose Template</h1>
                 <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Praesent commodo cursus magna vel scelerisque nisl consectetur et.</p>
@@ -427,6 +451,7 @@
             </div>
         </footer>
 
+        <script src="./JS/mobile-menu.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
            const swiper = new Swiper('.swiper', {
